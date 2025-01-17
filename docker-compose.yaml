@@ -13,7 +13,7 @@ services:
       ENABLE_CELERY_BEAT: 'no'
       ADMIN_USER: 'admin'
       ADMIN_EMAIL: 'admin@localhost'
-      #ADMIN_PASSWORD: 'uncomment_and_set_password_here'
+      ADMIN_PASSWORD: 'dj68717476'
     command: "./deploy/docker/prestart.sh"
     restart: on-failure
     depends_on:
@@ -28,7 +28,7 @@ services:
     ports:
       - "80:80"
     volumes:
-      - /mnt/nfs/MediaCMS:/home/mediacms.io/mediacms/media_files/
+      - /mnt/nfs:/home/mediacms.io/mediacms/media_files/
       - static_store:/home/mediacms.io/mediacms/static/
       - ./deploy/docker/local_settings.py:/home/mediacms.io/mediacms/deploy/docker/local_settings.py
     environment:
